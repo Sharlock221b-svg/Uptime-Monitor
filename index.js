@@ -15,12 +15,15 @@ const server = http.createServer( (req, res) => {
     //Getting the path
     const path = parsedUrl.pathname;
     const trimmedPath = path.replace(/^\/+|\/+$/g, '');
+
+    //Getting the request method
+    const method = req.method.toUpperCase();
     
     //Returning the response
     res.end('Hello World');
 
     //logging the path
-    console.log('Request received on Path:', trimmedPath);
+    console.log('Request received on Path:', trimmedPath, 'using method:', method);
 });
 
 //Making server listen
